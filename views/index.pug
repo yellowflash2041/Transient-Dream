@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class="cbh-section") 
+    div(id="instructions") Enter your location to find restaurants and bars near you
+    span(id="search-span")
+      input(id="search-box" type="text" accesskey="s" title="Search - Ctrl+[Alt+]s")
+      span(id="gps-icon")
+        i(class="fa fa-crosshairs" aria-hidden="true" data-toggle="tooltip" data-placement="top" id="get-location" title="Use my current location")
+    input(id="search-button" class="search-button" type="button" value="Search" disabled)
+  div(id="results-pane")
+    table(id="results-table")
+      tbody

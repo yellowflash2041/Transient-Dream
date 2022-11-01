@@ -1,0 +1,386 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#main-container {
+  background-color: rgb(0, 0, 50);
+  border-radius: 15px;
+  box-shadow: inset 0 0 20px 20px rgba(30, 30, 30, .6);
+  color: white;
+  min-height: 800px;
+  padding: 20px;
+}
+
+#main-header {
+  margin: 10px auto;
+  padding-left: 20px;
+  width: 1170px;
+}
+
+#title {
+  color: white;
+}
+
+#title:focus, #title:hover {
+  text-decoration: none;
+}
+
+@keyframes gpsFetch {
+  0% { 
+    box-shadow: 0 0 10px 10px hsla(200, 100%, 70%, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsla(200, 100%, 70%, 0);
+  }
+}
+
+.gpsFetch {
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-name: gpsFetch;
+}
+
+@keyframes enterKeyFB {
+  0% {
+    background-color: hsl(200, 100%, 35%);
+    border-color: hsl(200, 100%, 35%);
+  }
+  100% {
+    background-color: hsl(100, 100%, 30%);
+    border-color: hsl(100, 100%, 35%);
+  }
+}
+
+.enterKeyFB {
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-name: enterKeyFB;
+}
+
+@keyframes hues {
+  0% {
+    color: hsl(216, 100%, 70%);
+    text-shadow: 0 0 15px hsl(216, 100%, 41.2%);
+  }
+  10% {
+    color: hsl(252, 100%, 70%);
+    text-shadow: 0 0 15px hsl(252, 100%, 41.2%);
+  }
+  20% {
+    color: hsl(288, 100%, 70%);
+    text-shadow: 0 0 15px hsl(288, 100%, 41.2%);
+  }
+  30% {
+    color: hsl(324, 100%, 70%);
+    text-shadow: 0 0 15px hsl(324, 100%, 41.2%);
+  }
+  40% {
+    color: hsl(0, 100%, 70%);
+    text-shadow: 0 0 15px hsl(0, 100%, 41.2%);
+  }
+  50% {
+    color: hsl(36, 100%, 70%);
+    text-shadow: 0 0 15px hsl(36, 100%, 41.2%);
+  }
+  60% {
+    color: hsl(72, 100%, 70%);
+    text-shadow: 0 0 15px hsl(72, 100%, 41.2%);
+  }
+  70% {
+    color: hsl(108, 100%, 70%);
+    text-shadow: 0 0 15px hsl(108%, 100%, 41.2%);
+  }
+  80% {
+    color: hsl(144, 100%, 70%);
+    text-shadow: 0 0 15px hsl(144, 100%, 41.2%);
+  }
+  90% {
+    color: hsl(180, 100%, 70%);
+    text-shadow: 0 0 15px hsl(180, 100%, 41.2%);
+  }
+  100% {
+    color: hsl(216, 100%, 70%);
+    text-shadow: 0 0 15px hsl(216, 100%, 41.2%);
+  }
+}
+
+@keyframes teeter {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+.header-icon {
+  animation-duration: 60s, 22s;
+  animation-iteration-count: infinite;
+  animation-name: hues, teeter;
+  color: hsl(200, 100%, 70%);
+  margin-left: 20px;
+  text-shadow: 0 0 15px hsl(200, 100%, 41.2%);
+}
+
+#header-div h1 {
+  text-shadow: 2px 2px 12px rgb(0, 100, 200);
+}
+
+#header-div {
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px 5px rgb(0, 0, 50);
+  padding: 10px;
+  text-shadow: 2px 2px 2px black;
+}
+
+#instructions {
+  margin-bottom: 5px;
+}
+
+#results-table {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rebeccapurple;
+  width: 100%;
+}
+
+#results-table tr:hover {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+a {
+  color: #00B7FF;
+}
+
+.cbh-section {
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.patrons-div button.going { /* When someone clicks on the button to indicate they are going to a bar */
+  background-color: rgb(20, 150, 20);
+  box-shadow: 0 0 3px 3px white, 0 0 5px 3px yellow;
+  transition-duration: 5s;
+}
+
+#gps-icon {
+  color: black;
+  cursor: pointer;
+  display: none; /* Gets overridden if we have geolocation */
+  font-size: 19px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.guests-div {
+  bottom: 0;
+  position: relative;
+}
+
+.rating-count {
+  font-size: 10px;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+#search-box {
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  margin-left: 4px;
+  outline: none;
+}
+
+#search-span.sb-focus {
+  background-color: hsl(200, 100%, 90%);;
+}
+
+.search-button {
+  background-color: hsl(100, 100%, 30%);
+  border-color: hsl(100, 100%, 35%);
+  color: white;
+  display: inline-flex;
+  margin-left: 6px;
+  transition-duration: 250ms;
+  transition-property: all;
+  vertical-align: middle;
+}
+
+.search-button:disabled {
+  background-color: hsl(50, 10%, 30%);
+  border-color: hsl(50, 10%, 35%);
+  color: grey;
+  transition-duration: 1s;
+  transition-property: all;
+}
+
+.search-button:enabled:hover {
+  background-color: hsl(50, 100%, 30%);
+  border-color: hsl(50, 100%, 35%);
+}
+
+/* This class is used by jQuery to simulate being clicked when the user hits return in the text box */
+.search-button-active {
+  background-color: hsl(200, 100%, 35%);
+  border-color: hsl(200, 100%, 35%);
+  color: white;
+  display: inline-flex;
+  margin-left: 6px;
+  transition-duration: 500ms;
+  transition-property: all;
+  vertical-align: middle;
+}
+
+/* :active is tied over :hover so that the :hover (non-active) state above does not override our hover active rule below... */
+.search-button:enabled:hover:active {
+  background-color: hsl(200, 100%, 35%);
+  border-color: hsl(200, 100%, 35%);
+  color: white;
+  display: inline-flex;
+  margin-left: 6px;
+  transition-duration: 500ms;
+  transition-property: all;
+  vertical-align: middle;
+}
+
+#search-span {
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(238, 238, 238);
+  border-radius: 6px;
+  box-shadow: 2px 2px grey;
+  display: inline-flex;
+  height: 26px;
+  vertical-align: middle;
+  transition-duration: 5500ms;
+  transition-property: background-color;
+  width: auto;
+}
+
+input[type='button'] {
+  border-radius: 6px;
+}
+
+.listing-desc {
+  display: inline-table;
+  height: 100px;
+  margin-left: 10px;
+  max-width: 800px;
+  vertical-align: top;
+}
+
+.listing-image {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.listing-image img {
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.listing-name {
+  color: lightskyblue;
+  font-family: "Trebuchet MS";
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 10px auto 0 10px;
+  text-shadow: 0 -1px 2px rgba(100, 155, 255, .75);
+}
+
+.listing-name a {
+  text-decoration: none;
+}
+
+.rating {
+  overflow: hidden;
+  position: relative;
+  width: 106px;
+  height: 18px;
+}
+
+.ratings-div {
+  margin-bottom: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 106px;
+  height: 18px;
+}
+
+/* Note: .ratings-div is prefixed in these classes to give it a higher specificity */
+.ratings-div .stars_0 {
+  background-position: -3px -303px;
+}
+.ratings-div .stars_1 {
+  background-position: -3px -324px;
+}
+.ratings-div .stars_1_half {
+  background-position: -3px -345px;
+}
+.ratings-div .stars_2 {
+  background-position: -3px -366px;
+}
+.ratings-div .stars_2_half {
+  background-position: -3px -387px;
+}
+.ratings-div .stars_3 {
+  background-position: -3px -408px;
+}
+.ratings-div .stars_3_half {
+  background-position: -3px -429px;
+}
+.ratings-div .stars_4 {
+  background-position: -3px -450px;
+}
+.ratings-div .stars_4_half {
+  background-position: -3px -471px;
+}
+.ratings-div .stars_5 {
+  background-position: -3px -492px;
+}
+
+.star-img {
+  background: url('/images/review_stars/stars_map.png') no-repeat;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.listing-desc {
+  position: relative;
+}
+
+.ratings-div {
+  overflow: hidden;
+  position: relative;
+  width: 106px;
+  height: 18px;
+}
+
+.desc-div {
+  margin-bottom: 10px;
+}
+
+.patrons-div {
+  margin-bottom: 10px;
+}
+
+.patrons-div button {
+  background-color: black;
+  border-radius: 6px;
+  color: white;
+}
+
+#results-table hr {
+  background-image: linear-gradient(to right, hsl(100, 100%, 75%), hsl(150, 100%, 75%) 33%, hsl(200, 100%, 75%) 66%);
+  height: 1px;
+  margin-top: 0;
+}
